@@ -5,7 +5,7 @@
 		<packagename language="en"><![CDATA[bbcode progressbar]]></packagename>
 		<packagedescription language="de"><![CDATA[Fügt einen Fortschrittsbalken als BBCode hinzu]]></packagedescription>
 		<packagedescription language="en"><![CDATA[Adds an progressbar bbcode]]></packagedescription>
-		<version>1.0.1</version>
+		<version>1.0.2</version>
 		<date>2014-04-22</date>
 		<plugin>com.woltlab.wcf.bbcode</plugin>
 	</packageinformation>
@@ -28,5 +28,6 @@
 
     <instructions type="update" fromversion="1.0.0">
         <instruction type="file">files.tar</instruction>
+        <instruction type="bbcode">xml/bbcode.xml</instruction>
     </instructions>
 </package>

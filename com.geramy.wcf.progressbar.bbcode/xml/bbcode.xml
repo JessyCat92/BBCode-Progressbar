@@ -12,7 +12,10 @@
                 <attribute name="1"></attribute>
                 <attribute name="2"></attribute>
                 <attribute name="3">
-                    <validationpattern>[0-9]?[0-9]?[0-9]</validationpattern>
+                    <validationpattern>[-1-9]?[0-9]?[0-9]</validationpattern>
+                </attribute>
+                <attribute name="4">
+                    <validationpattern>[0-1]</validationpattern>
                 </attribute>
             </attributes>
             <allowedchildren>none^b,i,u,s,font,size</allowedchildren>

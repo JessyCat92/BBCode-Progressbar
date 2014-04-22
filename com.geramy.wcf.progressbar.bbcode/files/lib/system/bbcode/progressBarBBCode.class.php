@@ -26,7 +26,7 @@ class progressBarBBCode extends AbstractBBCode {
 
 
             $vars["content"]=$content;
-            if(strlen($content)!=0){
+            if(strlen($content)!=0 && $openingTag['attributes'][4]!=1){
                 $vars["content"].=": ";
             }
 
@@ -35,12 +35,16 @@ class progressBarBBCode extends AbstractBBCode {
             if(isset($openingTag['attributes'][0])){
                 if($openingTag['attributes'][0]!=-1){
                     $vars["fill"]=$openingTag['attributes'][0];
-                    $vars["content"].=$openingTag['attributes'][0]."%";
+                    if($openingTag['attributes'][4]!=1){
+                        $vars["content"].=$openingTag['attributes'][0]."%";
+                    }
                 }
             }
             if(!isset($vars["fill"])){
                 $vars["fill"]=0;
-                $vars["content"].="0%";
+                if($openingTag['attributes'][4]!=1){
+                    $vars["content"].="0%";
+                }
             }
 
             //bgfarbe
