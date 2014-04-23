@@ -24,6 +24,9 @@ class progressBarBBCode extends AbstractBBCode {
 		//if ($parser->getOutputType() == 'text/html') {
             $vars=array();
 
+			if(!isset($openingTag['attributes'][4])){
+				$openingTag['attributes'][4]=0;
+			}
 
             $vars["content"]=$content;
             if(strlen($content)!=0 && $openingTag['attributes'][4]!=1){
