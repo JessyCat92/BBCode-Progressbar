@@ -72,6 +72,7 @@ class progressBarBBCode extends AbstractBBCode {
             //breite
             if(isset($openingTag['attributes'][3])){
                 if($openingTag['attributes'][3]!=-1){
+                    $openingTag['attributes'][3]=str_replace("%","",$openingTag['attributes'][3]);
                     $vars["width"]=$openingTag['attributes'][3]."%";
                     //$height=$height/100*$openingTag['attributes'][3];
                 }
