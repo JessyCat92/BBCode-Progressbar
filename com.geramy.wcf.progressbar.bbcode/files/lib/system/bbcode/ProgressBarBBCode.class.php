@@ -13,7 +13,7 @@ use wcf\system\exception\SystemException;
  * @category	WCF
  * @parameter
  */
-class progressBarBBCode extends AbstractBBCode {
+class ProgressBarBBCode extends AbstractBBCode {
 	/**
 	 * @see	wcf\system\bbcode\IBBCode::getParsedTag()
 	 */
