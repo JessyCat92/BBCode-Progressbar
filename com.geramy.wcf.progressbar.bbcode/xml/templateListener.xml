@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/typhoon/templateListener.xsd">
+	<import>
+		<templatelistener name="pluginLang">
+			<environment>user</environment>
+			<templatename>headIncludeJavaScript</templatename>
+			<eventname>javascriptLanguageImport</eventname>
+			<templatecode><![CDATA[
+				{if $__wcf->getBBCodeHandler()->isAvailableBBCode('progressbar')},
+					'wcf.bbcode.editorProgressbarTitle': '{@"wcf.bbcode.editorProgressbarTitle"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarPercent': '{@"wcf.bbcode.editorProgressbarPercent"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarText': '{@"wcf.bbcode.editorProgressbarText"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarFillColor': '{@"wcf.bbcode.editorProgressbarFillColor"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarTextColor': '{@"wcf.bbcode.editorProgressbarTextColor"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarHidePercentage': '{@"wcf.bbcode.editorProgressbarHidePercentage"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarHidePercentageYes': '{@"wcf.bbcode.editorProgressbarHidePercentageYes"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarHidePercentageNo': '{@"wcf.bbcode.editorProgressbarHidePercentageNo"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarWidth': '{@"wcf.bbcode.editorProgressbarWidth"|language|encodeJS}',
+					'wcf.bbcode.editorProgressbarUseDefault': '{@"wcf.bbcode.editorProgressbarUseDefault"|language|encodeJS}'
+				{/if}
+			]]></templatecode>
+		</templatelistener>
+		
+		<templatelistener name="pluginInit">
+			<environment>user</environment>
+			<templatename>wysiwyg</templatename>
+			<eventname>javascriptInit</eventname>
+			<templatecode><![CDATA[{if $__wcf->getBBCodeHandler()->isAvailableBBCode('progressbar')}$config.plugins.push('progressbar');{/if}]]></templatecode>
+		</templatelistener>
+		
+		<templatelistener name="pluginInclude">
+			<environment>user</environment>
+			<templatename>wysiwyg</templatename>
+			<eventname>javascriptFiles</eventname>
+			<templatecode><![CDATA[{if $__wcf->getBBCodeHandler()->isAvailableBBCode('progressbar')},'{@$__wcf->getPath()}js/3rdParty/redactor/plugins/redactor.progressbar.js'{/if}]]></templatecode>
+		</templatelistener>
+	</import>
+</data>
