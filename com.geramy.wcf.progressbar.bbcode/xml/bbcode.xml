@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <data xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/bbcode.xsd">
+	<delete>
+		<bbcode name="progressbar" />
+	</delete>
 	<import>
 		<bbcode name="progressbar">
 			<classname>wcf\system\bbcode\ProgressBarBBCode</classname>
-			<wysiwygicon>progressBarBBCodeIcon.png</wysiwygicon>
-			<buttonlabel>wcf.bbcode.buttonLabelprogressBar</buttonlabel>
-            <attributes>
-                <attribute name="0">
-                    <validationpattern>[0-9]?[0-9]?[0-9]</validationpattern>
-                </attribute>
-                <attribute name="1"></attribute>
-                <attribute name="2"></attribute>
-                <attribute name="3">
-                    <validationpattern>[-1-9]?[0-9]?[0-9]</validationpattern>
-                </attribute>
-                <attribute name="4">
-                    <validationpattern>[0-1]</validationpattern>
-                </attribute>
-            </attributes>
-            <allowedchildren>none^b,i,u,s,font,size</allowedchildren>
+			<attributes>
+				<attribute name="0">
+					<validationpattern>[0-9]?[0-9]?[0-9]</validationpattern>
+				</attribute>
+				<attribute name="1"></attribute>
+				<attribute name="2"></attribute>
+				<attribute name="3">
+					<validationpattern>[-1-9]?[0-9]?[0-9]</validationpattern>
+				</attribute>
+				<attribute name="4">
+					<validationpattern>[0-1]</validationpattern>
+				</attribute>
+			</attributes>
+			<allowedchildren>none^b,i,u,s,font,size</allowedchildren>
 		</bbcode>
 	</import>
 </data>

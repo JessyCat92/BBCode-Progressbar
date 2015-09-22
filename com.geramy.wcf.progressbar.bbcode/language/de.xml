@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language xmlns="http://www.woltlab.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.woltlab.com http://www.woltlab.com/XSD/maelstrom/language.xsd" languagecode="de" languagename="Deutsch" countrycode="de">
     <category name="wcf.bbcode">
-        <item name="wcf.bbcode.buttonLabelprogressBar"><![CDATA[Fortschrittsbalken einbinden\nNutzung:[progressbar=wert,farbe,textfarbe,breite in %]Beschriftung[/progressbar]\nWenn Parameter übersprungen werden soll: -1 eintragen!]]></item>
-    </category>
+        <item name="wcf.bbcode.buttonLabelprogressBar"><![CDATA[Fortschrittsbalken einbinden]]></item>
+		<item name="wcf.bbcode.editorProgressbarTitle"><![CDATA[Fortschrittsbalken]]></item>
+		<item name="wcf.bbcode.editorProgressbarPercent"><![CDATA[Prozent]]></item>
+		<item name="wcf.bbcode.editorProgressbarText"><![CDATA[Beschreibung]]></item>
+		<item name="wcf.bbcode.editorProgressbarFillColor"><![CDATA[Balkenfarbe]]></item>
+		<item name="wcf.bbcode.editorProgressbarTextColor"><![CDATA[Textfarbe]]></item>
+		<item name="wcf.bbcode.editorProgressbarWidth"><![CDATA[Breite in Prozent]]></item>
+		<item name="wcf.bbcode.editorProgressbarHidePercentage"><![CDATA[Prozent anzeigen]]></item>
+		<item name="wcf.bbcode.editorProgressbarHidePercentageYes"><![CDATA[anzeigen]]></item>
+		<item name="wcf.bbcode.editorProgressbarHidePercentageNo"><![CDATA[ausblenden]]></item>
+		<item name="wcf.bbcode.editorProgressbarUseDefault"><![CDATA[Benutze Standard]]></item>
+	</category>
 </language>
