@@ -55,9 +55,9 @@ RedactorPlugins.progressbar = function() {
 			var template = "<table>";
 			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarPercent') + "</td><td><input type='number' id='progress-percentage' value='0'/></td></tr>";
 			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarText') + "</td><td><input type='text' id='progress-text' value=''/></td></tr>";
-			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarFillColor') + "</td><td><input type='color' id='progress-fillcolor' value='#D8E7F5'/>";
+			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarFillColor') + "</td><td><input type='color' id='progress-fillcolor' onchange=\"$(\'#progress-fillcolor-default\').attr(\'checked\', false);\" value='#D8E7F5'/>";
 			template += "<input type='checkbox' id='progress-fillcolor-default' checked/><label for='#progress-fillcolor-default'>" + WCF.Language.get('wcf.bbcode.editorProgressbarUseDefault') + "</label></td></tr>";
-			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarTextColor') + "</td><td><input type='color' id='progress-textcolor' value='#254C73'/>";
+			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarTextColor') + "</td><td><input type='color' id='progress-textcolor' onchange=\"$(\'#progress-textcolor-default\').attr(\'checked\', false);\" value='#254C73'/>";
 			template += "<input type='checkbox' id='progress-textcolor-default' checked/><label for='#progress-textcolor-default'>" + WCF.Language.get('wcf.bbcode.editorProgressbarUseDefault') + "</label></td></tr>";
 			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarWidth') + "</td><td><input type='number' min='0' max='100' id='progress-width' value='100'/></td></tr>";
 			template += "<tr><td>" + WCF.Language.get('wcf.bbcode.editorProgressbarHidePercentage') + "</td><td><select id='progress-hidepercentage'>"; 
