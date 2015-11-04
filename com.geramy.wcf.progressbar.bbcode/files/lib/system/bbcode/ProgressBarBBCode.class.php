@@ -54,7 +54,7 @@ class ProgressBarBBCode extends AbstractBBCode {
             if(isset($openingTag['attributes'][1])){
                 if($openingTag['attributes'][1]!=-1){
                     $vars["bgcolor"]=$openingTag['attributes'][1];
-                    if (substring($vars["bgcolor"],0,1) == "#") {
+                    if (substr($vars["bgcolor"],0,1) == "#") {
                     	$vars["bgcolor"] = $this->hex2rgb($vars["bgcolor"]);
                     }
                 }
@@ -68,7 +68,7 @@ class ProgressBarBBCode extends AbstractBBCode {
             if(isset($openingTag['attributes'][2])){
                 if($openingTag['attributes'][2]!=-1){
                     $vars["color"]=$openingTag['attributes'][2];
-                    if (substring($vars["color"],0,1) == "#") {
+                    if (substr($vars["color"],0,1) == "#") {
                     	$vars["color"] = $this->hex2rgb($vars["color"]);
                     }
                 }
