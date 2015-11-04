@@ -24,9 +24,9 @@ class ProgressBarBBCode extends AbstractBBCode {
 		//if ($parser->getOutputType() == 'text/html') {
             $vars=array();
 
-			if(!isset($openingTag['attributes'][4])){
-				$openingTag['attributes'][4]=0;
-			}
+	    if(!isset($openingTag['attributes'][4])){
+	         $openingTag['attributes'][4]=0;
+	    }
 
             $vars["content"]=$content;
             if(strlen($content)!=0 && $openingTag['attributes'][4]!=1){
@@ -54,19 +54,27 @@ class ProgressBarBBCode extends AbstractBBCode {
             if(isset($openingTag['attributes'][1])){
                 if($openingTag['attributes'][1]!=-1){
                     $vars["bgcolor"]=$openingTag['attributes'][1];
+                    if (substring($vars["bgcolor"],0,1) == "#") {
+                    	$vars["bgcolor"] = $this->hex2rgb($vars["bgcolor"]);
+                    }
                 }
             }
             if(!isset($vars["bgcolor"]))
-                $vars["bgcolor"]='#D8E7F5';
+                $vars["bgcolor"]='rgb(216, 231, 245)';
+                
+                
 
             //farbe
             if(isset($openingTag['attributes'][2])){
                 if($openingTag['attributes'][2]!=-1){
                     $vars["color"]=$openingTag['attributes'][2];
+                    if (substring($vars["color"],0,1) == "#") {
+                    	$vars["color"] = $this->hex2rgb($vars["color"]);
+                    }
                 }
             }
             if(!isset($vars["color"]))
-                $vars["color"]='#254C73';
+                $vars["color"]='rgb(37,76,115)';
 
             $height=25;
             //breite
@@ -87,5 +95,25 @@ class ProgressBarBBCode extends AbstractBBCode {
 			WCF::getTPL()->assign($vars);
 			return WCF::getTPL()->fetch('progressBarBBCodeTag');
 	//	}
+	}
+	
+	/**
+	 * Change Hexadecimal ColorCodes to RGB
+	 * @param string $hex Colorcode in Hexadecimal
+	 * @returns string Colorcode in RGB
+	 */
+	public function hex2rgb($hex) {
+	   $hex = str_replace("#", "", $hex);
+	
+	   if(strlen($hex) == 3) {
+	      $r = hexdec(substr($hex,0,1).substr($hex,0,1));
+	      $g = hexdec(substr($hex,1,1).substr($hex,1,1));
+	      $b = hexdec(substr($hex,2,1).substr($hex,2,1));
+	   } else {
+	      $r = hexdec(substr($hex,0,2));
+	      $g = hexdec(substr($hex,2,2));
+	      $b = hexdec(substr($hex,4,2));
+	   }
+	   return "rgb($r,$g,$b)"; 
 	}
 }
